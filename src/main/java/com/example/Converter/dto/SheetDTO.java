@@ -1,7 +1,7 @@
 package com.example.Converter.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.List;
+import java.util.Map;
 
 public class SheetDTO {
 
@@ -9,9 +9,9 @@ public class SheetDTO {
     private String sheetName;
 
     @JsonProperty("content")
-    private List<List<String>> content;
+    private Map <String, Map<String, String>> content;
 
-    public SheetDTO(String sheetName, List<List<String>> content) {
+    public SheetDTO(String sheetName, Map<String, Map<String, String>> content) {
         this.sheetName = sheetName;
         this.content = content;
     }
@@ -20,6 +20,6 @@ public class SheetDTO {
     public String getSheetName() { return sheetName; }
     public void setSheetName(String sheetName) { this.sheetName = sheetName; }
 
-    public List<List<String>> getContent() { return content; }
-    public void setContent(List<List<String>> content) { this.content = content; }
+    public Map<String, Map<String, String>> getContent() { return content; }
+    public void setContent(Map<String, Map<String, String>> content) { this.content = content; }
 }
