@@ -1,4 +1,13 @@
-FROM ubuntu:latest
-LABEL authors="lucas"
+FROM eclipse-temurin:21-jdk-alpine
 
-ENTRYPOINT ["top", "-b"]
+# Define o diretório de trabalho
+WORKDIR /app
+
+# Copia o JAR da aplicação para o contêiner
+COPY target/*.jar app.jar
+
+# Expõe a porta usada pela aplicação (ajuste se necessário)
+EXPOSE 8505
+
+# Comando para rodar a aplicação
+ENTRYPOINT ["java", "-jar", "app.jar"]

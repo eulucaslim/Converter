@@ -1,0 +1,6 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8505:8505"
+    container_name: converter-app
